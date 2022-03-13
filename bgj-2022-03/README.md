@@ -4,7 +4,7 @@
 Growth
 
 ## Ideas
-- Necromancer theme
+- Necromancer concept
 - Inspiration
    - The Unliving
    - Gauntlet
@@ -61,3 +61,4 @@ Growth
 - https://www.reddit.com/r/godot/comments/p8tnh7/where_do_you_store_persistent_player_data_between/
 - https://godotforums.org/discussion/18681/how-to-convert-mouse-coordinates-to-3d-position
 - https://docs.godotengine.org/en/stable/tutorials/3d/portals/index.html
+- https://magazine.renderosity.com/article/6392/making-a-nicer-looking-top-down-perspective-in-unity

@@ -9,6 +9,7 @@ height = 10.1883
 
 [node name="Player" type="KinematicBody"]
 script = ExtResource( 2 )
+speed = 32
 
 [node name="Pivot" type="Spatial" parent="."]
 
