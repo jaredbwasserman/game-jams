@@ -1,0 +1,63 @@
+# Blizzard Game Jam 2022-03
+
+## Theme
+Growth
+
+## Ideas
+- Necromancer theme
+- Inspiration
+   - The Unliving
+   - Gauntlet
+   - Merlin's Revenge
+   - Legacy of Goku 2
+   - Trick-O-Treat-O-Tron
+   - Pikmin
+- Left click is melee scythe attack
+   - high speed, low power if click no hold down
+   - low speed, high power as you hold down longer
+   - able to move (but more slowly) while charging attack
+- Right click is magic attack
+   - hold down does not repeat, need to right-click every time
+   - casts active magic ability and takes different amount of time depending on spell
+- Number keys 1, 2, 3, 4, 5, etc are magic abilities
+   - hit key to set active magic ability
+   - scroll wheel also changes ability
+   - each one has a different effect, cast time, and resourece requirement
+- Spells
+   - drain health of enemy
+      - Requires some mana
+      - Channels until mana runs out
+   - summon bulwark skeleton (tank, high health, low damage)
+      - Requires one human soul and some mana
+      - Spawns at mouse location (with max radius from player)
+   - summon ninja skeleton (DPS, low health, high damage)
+      - Requires one human soul and some mana
+      - Spawns at mouse location (with max radius from player)
+- Resources
+   - Spells require different resources
+   - Get one human soul per kill
+   - Mana recharge over time (fast out of combat)
+   - Health recharge over time (fast out of combat)
+- Potions
+   - Health potion
+   - Mana potion
+- Levels
+   - First level is a training area with unlimited mana and souls useful for testing combat
+- Talents
+   - Talents allow to learn everything
+      - Charged melee attack, all spells
+   - Talents also improve everything depending on play style
+   - Talent points from hard challenges
+   - Can refund plus respec in safe areas
+- Implementation Details
+   - Make sure cannot attack with scythe at the same time as cast spell
+   - Make sure can only cast one spell at a time
+   - Maybe some is_busy variable held by player?
+   - Make sure to update current path node to 0 when path recalculated
+
+## Resources
+- https://www.youtube.com/playlist?list=PLaGRTLvEbVzyUMwjUPgrreyRE3AY8jhOK
+- https://www.youtube.com/watch?v=S7jBSs5j4-c
+- https://www.reddit.com/r/godot/comments/p8tnh7/where_do_you_store_persistent_player_data_between/
+- https://godotforums.org/discussion/18681/how-to-convert-mouse-coordinates-to-3d-position
+- https://docs.godotengine.org/en/stable/tutorials/3d/portals/index.html
