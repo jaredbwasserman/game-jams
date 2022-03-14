@@ -6,6 +6,9 @@ export var speed = 14
 # The downward acceleration when in the air, in meters per second squared
 export var fall_acceleration = 75
 
+# Camera
+export var camera_path = ""
+
 # Velocity of player
 var velocity = Vector3.ZERO
 
@@ -44,7 +47,8 @@ func _physics_process(delta):
 # Get position of mouse in 3D space
 func _get_mouse_intersect():
 	var mouse_pos = get_viewport().get_mouse_position()
-	var from = $CameraPivot/Camera.project_ray_origin(mouse_pos)
-	var to = from + $CameraPivot/Camera.project_ray_normal(mouse_pos) * 1000
+	var camera = get_node("/root/Main/PlayerCamera")
+	var from = camera.project_ray_origin(mouse_pos)
+	var to = from + camera.project_ray_normal(mouse_pos) * 1000
 	var space_state = get_world().get_direct_space_state()
 	return space_state.intersect_ray(from, to)

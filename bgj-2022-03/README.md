@@ -55,6 +55,9 @@ Growth
    - Maybe some is_busy variable held by player?
    - Make sure to update current path node to 0 when path recalculated
 
+## TODO
+- Why does padding need to be +5 for x dimension for camera?
+
 ## Resources
 - https://www.youtube.com/playlist?list=PLaGRTLvEbVzyUMwjUPgrreyRE3AY8jhOK
 - https://www.youtube.com/watch?v=S7jBSs5j4-c
@@ -62,3 +65,4 @@ Growth
 - https://godotforums.org/discussion/18681/how-to-convert-mouse-coordinates-to-3d-position
 - https://docs.godotengine.org/en/stable/tutorials/3d/portals/index.html
 - https://magazine.renderosity.com/article/6392/making-a-nicer-looking-top-down-perspective-in-unity
+- https://godotengine.org/qa/19177/define-the-limits-of-a-3d-camera
