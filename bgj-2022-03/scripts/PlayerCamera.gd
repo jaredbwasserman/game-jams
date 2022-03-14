@@ -32,7 +32,6 @@ func _process(delta):
 	var target = get_node(target_path).get_translation()
 	var camera = get_node(".")
 	var camera_size_half = camera.get_size()
-	var camera_size_half_z = camera_size_half * 0.707107 # sqrt(2)/2
 
 	var clamp_x = clamp(
 		target.x,
@@ -44,8 +43,8 @@ func _process(delta):
 
 	var clamp_z = clamp(
 		target.z + offset_z,
-		-ground_size_z_half + camera_size_half_z + offset_z - padding_z,
-		ground_size_z_half - camera_size_half_z + offset_z + padding_z
+		-ground_size_z_half + camera_size_half + offset_z - padding_z,
+		ground_size_z_half - camera_size_half + offset_z + padding_z
 	)
 
 	var new_pos = Vector3(clamp_x, clamp_y, clamp_z)
