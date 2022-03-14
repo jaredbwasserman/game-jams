@@ -1,13 +1,13 @@
 extends KinematicBody
 
+# Emitted when entering a new room
+signal new_room_entered
+
 # How fast the player moves horizontally in meters per second
 export var speed = 14
 
 # The downward acceleration when in the air, in meters per second squared
 export var fall_acceleration = 75
-
-# Camera
-export var camera_path = ""
 
 # Velocity of player
 var velocity = Vector3.ZERO
@@ -18,11 +18,12 @@ func _physics_process(delta):
 	var mouse_intersect = _get_mouse_intersect()
 	if mouse_intersect:
 		var mouse_pos: Vector3 = mouse_intersect.position
-		mouse_pos.y = $Pivot.translation.y
-		$Pivot.look_at(mouse_pos, Vector3.UP)
+		var pivot = $Pivot
+		mouse_pos.y = pivot.translation.y
+		pivot.look_at(mouse_pos, Vector3.UP)
 
 		# Fix rotation
-		$Pivot.rotation = Vector3(0, $Pivot.rotation.y, 0)
+		pivot.rotation = Vector3(0, pivot.rotation.y, 0)
 
 	# Move
 	var direction = Vector3.ZERO
@@ -44,11 +45,16 @@ func _physics_process(delta):
 	velocity.y -= fall_acceleration * delta
 	velocity = move_and_slide(velocity, Vector3.UP)
 
+
 # Get position of mouse in 3D space
 func _get_mouse_intersect():
 	var mouse_pos = get_viewport().get_mouse_position()
-	var camera = get_node("/root/Main/PlayerCamera")
+	var camera = get_node("../PlayerCamera")
 	var from = camera.project_ray_origin(mouse_pos)
 	var to = from + camera.project_ray_normal(mouse_pos) * 1000
 	var space_state = get_world().get_direct_space_state()
 	return space_state.intersect_ray(from, to)
+
+
+func _on_Area_area_entered(area):
+	emit_signal("new_room_entered", area)

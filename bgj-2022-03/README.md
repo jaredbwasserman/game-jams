@@ -54,6 +54,7 @@ Growth
    - Make sure can only cast one spell at a time
    - Maybe some is_busy variable held by player?
    - Make sure to update current path node to 0 when path recalculated
+   - Call `rooms_clear` if making multiple levels https://docs.godotengine.org/en/stable/classes/class_roommanager.html#class-roommanager-method-rooms-clear
 
 ## Resources
 - https://www.youtube.com/playlist?list=PLaGRTLvEbVzyUMwjUPgrreyRE3AY8jhOK
@@ -63,3 +64,4 @@ Growth
 - https://docs.godotengine.org/en/stable/tutorials/3d/portals/index.html
 - https://magazine.renderosity.com/article/6392/making-a-nicer-looking-top-down-perspective-in-unity
 - https://godotengine.org/qa/19177/define-the-limits-of-a-3d-camera
+- https://www.youtube.com/watch?v=DBgIES-CIUI
