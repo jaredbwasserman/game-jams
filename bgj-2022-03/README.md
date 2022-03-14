@@ -55,9 +55,6 @@ Growth
    - Maybe some is_busy variable held by player?
    - Make sure to update current path node to 0 when path recalculated
 
-## TODO
-- Why does padding need to be +5 for x dimension for camera?
-
 ## Resources
 - https://www.youtube.com/playlist?list=PLaGRTLvEbVzyUMwjUPgrreyRE3AY8jhOK
 - https://www.youtube.com/watch?v=S7jBSs5j4-c
