@@ -9,7 +9,7 @@ export var target_path: String = ""
 
 # Padding
 export var padding_x = 0
-export var paddinx_z = 0
+export var padding_z = 0
 
 # Offsets
 export var offset_y = 50
@@ -44,8 +44,8 @@ func _process(delta):
 
 	var clamp_z = clamp(
 		target.z + offset_z,
-		-ground_size_z_half + camera_size_half_z + offset_z - paddinx_z,
-		ground_size_z_half - camera_size_half_z + offset_z + paddinx_z
+		-ground_size_z_half + camera_size_half_z + offset_z - padding_z,
+		ground_size_z_half - camera_size_half_z + offset_z + padding_z
 	)
 
 	var new_pos = Vector3(clamp_x, clamp_y, clamp_z)
