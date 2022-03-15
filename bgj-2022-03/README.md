@@ -55,6 +55,7 @@ Growth
    - Maybe some is_busy variable held by player?
    - Make sure to update current path node to 0 when path recalculated
    - Call `rooms_clear` if making multiple levels https://docs.godotengine.org/en/stable/classes/class_roommanager.html#class-roommanager-method-rooms-clear
+   - Update icon of game (upper-left)
 
 ## Resources
 - https://www.youtube.com/playlist?list=PLaGRTLvEbVzyUMwjUPgrreyRE3AY8jhOK

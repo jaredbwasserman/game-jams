@@ -9,6 +9,9 @@ export var speed = 14
 # The downward acceleration when in the air, in meters per second squared
 export var fall_acceleration = 75
 
+# Vertical impulse applied to the character upon jumping in meters per second.
+export var jump_impulse = 30
+
 # Velocity of player
 var velocity = Vector3.ZERO
 
@@ -24,6 +27,10 @@ func _physics_process(delta):
 
 		# Fix rotation
 		pivot.rotation = Vector3(0, pivot.rotation.y, 0)
+
+	# Jump
+	if is_on_floor() and Input.is_action_just_pressed("jump"):
+		velocity.y += jump_impulse
 
 	# Move
 	var direction = Vector3.ZERO
@@ -53,7 +60,7 @@ func _get_mouse_intersect():
 	var from = camera.project_ray_origin(mouse_pos)
 	var to = from + camera.project_ray_normal(mouse_pos) * 1000
 	var space_state = get_world().get_direct_space_state()
-	return space_state.intersect_ray(from, to)
+	return space_state.intersect_ray(from, to, [], 16) # Collide with ground
 
 
 func _on_Area_area_entered(area):
