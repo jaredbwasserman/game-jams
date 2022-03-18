@@ -66,3 +66,4 @@ Growth
 - https://magazine.renderosity.com/article/6392/making-a-nicer-looking-top-down-perspective-in-unity
 - https://godotengine.org/qa/19177/define-the-limits-of-a-3d-camera
 - https://www.youtube.com/watch?v=DBgIES-CIUI
+- https://www.youtube.com/watch?v=DkJ2jYl-ESw
