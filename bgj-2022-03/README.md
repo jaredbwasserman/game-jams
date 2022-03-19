@@ -67,3 +67,5 @@ Growth
 - https://godotengine.org/qa/19177/define-the-limits-of-a-3d-camera
 - https://www.youtube.com/watch?v=DBgIES-CIUI
 - https://www.youtube.com/watch?v=DkJ2jYl-ESw
+- https://www.youtube.com/watch?v=zua2AfUonYU
+- https://www.godotforums.org/discussion/22779/x-at-gltf-import

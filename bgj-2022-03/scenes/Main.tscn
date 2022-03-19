@@ -58,6 +58,7 @@ ground_mesh_path = "/root/Main/RoomsRoot/RoomsManager/RoomsList/Room1/Ground/Mes
 
 [node name="Sun" type="DirectionalLight" parent="."]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 50, 0 )
+light_energy = 2.0
 shadow_enabled = true
 
 [connection signal="new_room_entered" from="Player" to="PlayerCamera" method="_on_Player_new_room_entered"]
