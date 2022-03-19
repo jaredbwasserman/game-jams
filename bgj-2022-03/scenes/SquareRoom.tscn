@@ -1,0 +1,202 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://scripts/SquareRoom.gd" type="Script" id=1]
+
+[sub_resource type="BoxShape" id=1]
+extents = Vector3( 50, 1, 50 )
+
+[sub_resource type="SpatialMaterial" id=3]
+albedo_color = Color( 0.223529, 0.164706, 0.0705882, 1 )
+
+[sub_resource type="CubeMesh" id=2]
+material = SubResource( 3 )
+size = Vector3( 100, 2, 100 )
+
+[sub_resource type="BoxShape" id=4]
+extents = Vector3( 45, 10, 45 )
+
+[sub_resource type="SpatialMaterial" id=6]
+albedo_color = Color( 0.219608, 0.14902, 0.105882, 0.0823529 )
+
+[sub_resource type="SpatialMaterial" id=11]
+albedo_color = Color( 0.219608, 0.109804, 0.0117647, 1 )
+
+[sub_resource type="PlaneMesh" id=10]
+material = SubResource( 11 )
+size = Vector2( 4, 20 )
+
+[node name="SquareRoom" type="Room"]
+script = ExtResource( 1 )
+
+[node name="Ground" type="StaticBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
+collision_layer = 16
+collision_mask = 0
+
+[node name="CollisionShape" type="CollisionShape" parent="Ground"]
+shape = SubResource( 1 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Ground"]
+mesh = SubResource( 2 )
+material/0 = null
+
+[node name="Area" type="Area" parent="."]
+collision_layer = 8
+collision_mask = 0
+monitoring = false
+
+[node name="CollisionShape" type="CollisionShape" parent="Area"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10, 0 )
+shape = SubResource( 4 )
+
+[node name="EastNorthWall" type="CSGBox" parent="."]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 49.5, 10, -29.5 )
+visible = false
+use_collision = true
+collision_layer = 4
+collision_mask = 0
+width = 39.0
+height = 20.0
+depth = 1.0
+material = SubResource( 6 )
+
+[node name="EastWall" type="CSGBox" parent="."]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 49.5, 10, 0 )
+visible = false
+use_collision = true
+collision_layer = 4
+collision_mask = 0
+width = 20.0
+height = 20.0
+depth = 1.0
+material = SubResource( 6 )
+
+[node name="EastSouthWall" type="CSGBox" parent="."]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 49.5, 10, 29.5 )
+visible = false
+use_collision = true
+collision_layer = 4
+collision_mask = 0
+width = 39.0
+height = 20.0
+depth = 1.0
+material = SubResource( 6 )
+
+[node name="EastDoor" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 48, 0.1, 0 )
+mesh = SubResource( 10 )
+material/0 = null
+
+[node name="SouthEastWall" type="CSGBox" parent="."]
+transform = Transform( 1, 0, 1.06581e-14, 0, 1, 0, -1.06581e-14, 0, 1, 29.5, 10, 49.5 )
+visible = false
+use_collision = true
+collision_layer = 4
+collision_mask = 0
+width = 39.0
+height = 20.0
+depth = 1.0
+material = SubResource( 6 )
+
+[node name="SouthWall" type="CSGBox" parent="."]
+transform = Transform( 1, 0, 1.06581e-14, 0, 1, 0, -1.06581e-14, 0, 1, 0, 10, 49.5 )
+visible = false
+use_collision = true
+collision_layer = 4
+collision_mask = 0
+width = 20.0
+height = 20.0
+depth = 1.0
+material = SubResource( 6 )
+
+[node name="SouthWestWall" type="CSGBox" parent="."]
+transform = Transform( 1, 0, 1.06581e-14, 0, 1, 0, -1.06581e-14, 0, 1, -29.5, 10, 49.5 )
+visible = false
+use_collision = true
+collision_layer = 4
+collision_mask = 0
+width = 39.0
+height = 20.0
+depth = 1.0
+material = SubResource( 6 )
+
+[node name="SouthDoor" type="MeshInstance" parent="."]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0.1, 48 )
+mesh = SubResource( 10 )
+material/0 = null
+
+[node name="WestSouthWall" type="CSGBox" parent="."]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -49.5, 10, 29.5 )
+visible = false
+use_collision = true
+collision_layer = 4
+collision_mask = 0
+width = 39.0
+height = 20.0
+depth = 1.0
+material = SubResource( 6 )
+
+[node name="WestWall" type="CSGBox" parent="."]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -49.5, 10, 0 )
+visible = false
+use_collision = true
+collision_layer = 4
+collision_mask = 0
+width = 20.0
+height = 20.0
+depth = 1.0
+material = SubResource( 6 )
+
+[node name="WestNorthWall" type="CSGBox" parent="."]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -49.5, 10, -29.5 )
+visible = false
+use_collision = true
+collision_layer = 4
+collision_mask = 0
+width = 39.0
+height = 20.0
+depth = 1.0
+material = SubResource( 6 )
+
+[node name="WestDoor" type="MeshInstance" parent="."]
+transform = Transform( -1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -48, 0.1, 0 )
+mesh = SubResource( 10 )
+material/0 = null
+
+[node name="NorthWestWall" type="CSGBox" parent="."]
+transform = Transform( -1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -29.5, 10, -49.5 )
+visible = false
+use_collision = true
+collision_layer = 4
+collision_mask = 0
+width = 39.0
+height = 20.0
+depth = 1.0
+material = SubResource( 6 )
+
+[node name="NorthWall" type="CSGBox" parent="."]
+transform = Transform( -1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 10, -49.5 )
+visible = false
+use_collision = true
+collision_layer = 4
+collision_mask = 0
+width = 20.0
+height = 20.0
+depth = 1.0
+material = SubResource( 6 )
+
+[node name="NorthEastWall" type="CSGBox" parent="."]
+transform = Transform( -1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 29.5, 10, -49.5 )
+visible = false
+use_collision = true
+collision_layer = 4
+collision_mask = 0
+width = 39.0
+height = 20.0
+depth = 1.0
+material = SubResource( 6 )
+
+[node name="NorthDoor" type="MeshInstance" parent="."]
+transform = Transform( 1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 0, 0.1, -48 )
+mesh = SubResource( 10 )
+material/0 = null
