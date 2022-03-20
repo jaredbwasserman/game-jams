@@ -3,6 +3,9 @@
 ## Theme
 Growth
 
+## Assets Used
+- Kenney Particle Pack: https://www.kenney.nl/assets/particle-pack
+
 ## Ideas
 - Necromancer concept
 - Inspiration
