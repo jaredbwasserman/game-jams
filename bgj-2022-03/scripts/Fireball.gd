@@ -23,7 +23,11 @@ func initialize(new_position, new_rotation, spell_charge):
 	global_transform.origin = new_position
 
 	# Scale
-	$Ball.scale = Vector3(spell_charge, spell_charge, spell_charge)
+	$Spatial/Ball.set_scale(Vector3(spell_charge, spell_charge, spell_charge))
+	$Spatial/BallShadow.set_scale(Vector3(spell_charge, spell_charge, spell_charge))
+	$Spatial/BallParticles.set_scale(Vector3(spell_charge, spell_charge, spell_charge))
+	$CollisionShape.set_scale(Vector3(spell_charge, spell_charge, spell_charge))
+	$VisibilityNotifier.set_scale(Vector3(spell_charge, spell_charge, spell_charge))
 
 	# Velocity
 	var speed = clamp(

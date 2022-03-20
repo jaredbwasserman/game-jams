@@ -14,7 +14,6 @@ Growth
    - https://github.com/godotengine/godot/issues/327
 - Make spell visible during charge up and make position offset from front of player
    - Remember to not add collision detection until the spell is actually moving
-- Why do fireballs not cast shadows?
 
 ## Ideas
 - Necromancer concept
