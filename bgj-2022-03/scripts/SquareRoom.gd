@@ -8,21 +8,25 @@ export var north_open = true
 
 func _ready():
 	if east_open:
-		$EastWall.queue_free()
+		$EastWall.set_collision_layer_bit(5, true)
 	else:
+		$EastWall.set_collision_layer_bit(2, true)
 		$EastDoor.queue_free()
-		
+
 	if south_open:
-		$SouthWall.queue_free()
+		$SouthWall.set_collision_layer_bit(5, true)
 	else:
+		$SouthWall.set_collision_layer_bit(2, true)
 		$SouthDoor.queue_free()
-		
+
 	if west_open:
-		$WestWall.queue_free()
+		$WestWall.set_collision_layer_bit(5, true)
 	else:
+		$WestWall.set_collision_layer_bit(2, true)
 		$WestDoor.queue_free()
-		
+
 	if north_open:
-		$NorthWall.queue_free()
+		$NorthWall.set_collision_layer_bit(5, true)
 	else:
+		$NorthWall.set_collision_layer_bit(2, true)
 		$NorthDoor.queue_free()

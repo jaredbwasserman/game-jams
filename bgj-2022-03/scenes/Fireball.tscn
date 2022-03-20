@@ -1,10 +1,10 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=9 format=2]
 
-[ext_resource path="res://assets/particles/fire_02.png" type="Texture" id=1]
-[ext_resource path="res://assets/particles/smoke_06.png" type="Texture" id=2]
+[ext_resource path="res://assets/particles/star_01.png" type="Texture" id=1]
+[ext_resource path="res://scripts/Fireball.gd" type="Script" id=3]
 
 [sub_resource type="SphereShape" id=1]
-radius = 0.5
+radius = 0.25
 
 [sub_resource type="SpatialMaterial" id=3]
 flags_transparent = true
@@ -18,77 +18,43 @@ particles_anim_loop = false
 albedo_texture = ExtResource( 1 )
 
 [sub_resource type="Gradient" id=5]
-offsets = PoolRealArray( 0, 0.272358, 0.556911, 0.845528, 1 )
-colors = PoolColorArray( 0.519531, 0.0121765, 0.0121765, 1, 0.78125, 0.186849, 0.0701904, 1, 0.730469, 0.235251, 0.0285339, 1, 0.902344, 0.408875, 0.112793, 1, 0.859375, 0.373616, 0.224915, 1 )
+offsets = PoolRealArray( 0, 0.49187, 0.768293, 0.922764, 1 )
+colors = PoolColorArray( 0.264648, 0, 0, 1, 0.752941, 0.0784314, 0, 1, 0.682353, 0.309804, 0, 1, 0.776471, 0.533333, 0, 1, 0.862745, 0.796078, 0, 1 )
 
 [sub_resource type="GradientTexture" id=6]
 gradient = SubResource( 5 )
 
-[sub_resource type="Curve" id=7]
-_data = [ Vector2( 0, 0.251136 ), 0.0, 0.203788, 0, 0, Vector2( 0.557621, 0.542045 ), 1.75208, 1.75208, 0, 0, Vector2( 1, 1 ), 0.0, 0.0, 0, 0 ]
-
-[sub_resource type="CurveTexture" id=8]
-curve = SubResource( 7 )
-
 [sub_resource type="ParticlesMaterial" id=2]
 emission_shape = 1
-emission_sphere_radius = 0.15
+emission_sphere_radius = 0.05
 gravity = Vector3( 0, 0, 0 )
 angle = 360.0
 angle_random = 1.0
-scale_curve = SubResource( 8 )
+scale = 1.5
 color_ramp = SubResource( 6 )
 
 [sub_resource type="QuadMesh" id=4]
 
-[sub_resource type="SpatialMaterial" id=9]
-flags_transparent = true
-flags_unshaded = true
-vertex_color_use_as_albedo = true
-params_blend_mode = 1
-params_billboard_mode = 3
-particles_anim_h_frames = 1
-particles_anim_v_frames = 1
-particles_anim_loop = false
-albedo_texture = ExtResource( 2 )
-
-[sub_resource type="Gradient" id=12]
-offsets = PoolRealArray( 0, 0.46748, 0.995935 )
-colors = PoolColorArray( 0.257813, 0.257813, 0.257813, 1, 0.15625, 0.155029, 0.155029, 0.470588, 0.0862745, 0.0862745, 0.0862745, 0 )
-
-[sub_resource type="GradientTexture" id=13]
-gradient = SubResource( 12 )
-
-[sub_resource type="ParticlesMaterial" id=10]
-spread = 180.0
-gravity = Vector3( 0, 0, 0 )
-initial_velocity = 0.4
-initial_velocity_random = 0.2
-linear_accel = -0.1
-angle = 360.0
-angle_random = 1.0
-scale = 0.5
-color_ramp = SubResource( 13 )
-
-[sub_resource type="QuadMesh" id=11]
-
-[node name="Fireball" type="RigidBody"]
+[node name="Fireball" type="KinematicBody"]
+collision_layer = 0
+collision_mask = 38
+script = ExtResource( 3 )
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
 shape = SubResource( 1 )
 
+[node name="VisibilityNotifier" type="VisibilityNotifier" parent="."]
+portal_mode = 3
+include_in_bound = false
+aabb = AABB( -0.25, -0.25, -0.25, 0.5, 0.5, 0.5 )
+
 [node name="Ball" type="Particles" parent="."]
-portal_mode = 2
+portal_mode = 3
+include_in_bound = false
 material_override = SubResource( 3 )
-amount = 40
+amount = 50
+preprocess = 1.0
 process_material = SubResource( 2 )
 draw_pass_1 = SubResource( 4 )
 
-[node name="Smoke" type="Particles" parent="."]
-portal_mode = 2
-material_override = SubResource( 9 )
-amount = 20
-lifetime = 2.0
-local_coords = false
-process_material = SubResource( 10 )
-draw_pass_1 = SubResource( 11 )
+[connection signal="camera_exited" from="VisibilityNotifier" to="." method="_on_VisibilityNotifier_camera_exited"]

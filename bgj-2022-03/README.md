@@ -6,6 +6,16 @@ Growth
 ## Assets Used
 - Kenney Particle Pack: https://www.kenney.nl/assets/particle-pack
 
+## TODO
+- Bigger spells should do more damage and area damage
+- Make it necessary to jump and shoot spell at height peak to damage certain monsters (cyclops perhaps?)
+- Make fireball smoke scale with spell power (in additional to the ball part of the fireball)
+   - Add smoke trail
+   - https://github.com/godotengine/godot/issues/327
+- Make spell visible during charge up and make position offset from front of player
+   - Remember to not add collision detection until the spell is actually moving
+- Why do fireballs not cast shadows?
+
 ## Ideas
 - Necromancer concept
 - Inspiration
@@ -72,3 +82,4 @@ Growth
 - https://www.youtube.com/watch?v=DkJ2jYl-ESw
 - https://www.youtube.com/watch?v=zua2AfUonYU
 - https://www.godotforums.org/discussion/22779/x-at-gltf-import
+- https://godotengine.org/qa/72120/how-to-change-the-size-of-the-collision-shape-in-script
