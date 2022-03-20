@@ -78,14 +78,16 @@ color_ramp = SubResource( 13 )
 shape = SubResource( 1 )
 
 [node name="Ball" type="Particles" parent="."]
+portal_mode = 2
 material_override = SubResource( 3 )
 amount = 40
 process_material = SubResource( 2 )
 draw_pass_1 = SubResource( 4 )
 
 [node name="Smoke" type="Particles" parent="."]
+portal_mode = 2
 material_override = SubResource( 9 )
-amount = 10
+amount = 20
 lifetime = 2.0
 local_coords = false
 process_material = SubResource( 10 )
