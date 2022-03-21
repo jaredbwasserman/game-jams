@@ -15,20 +15,11 @@ export var jump_impulse = 30
 # Spell to shoot
 export (PackedScene) var spell_scene
 
-# Lower value means faster charge rate
-export var spell_mult_inverse = 15
-
-# Max spell power
-export var max_spell_power = 5
-
 # Velocity of player
 var velocity = Vector3.ZERO
 
-# Spell charge of the player
-var spell_charge = 0
-
-# Room of player
-var room
+# Spell of player
+var spell
 
 
 func _physics_process(delta):
@@ -45,27 +36,15 @@ func _physics_process(delta):
 
 	# Power up spell
 	if Input.is_action_pressed("shoot"):
-		spell_charge += 1
+		_init_spell_if_needed()
+		_update_spell_pos()
+		spell.add_charge(1)
 
 	# Shoot spell
 	if Input.is_action_just_released("shoot"):
-		var spell = spell_scene.instance()
-		room.add_child(spell)
-
-		# Clamp charge
-		spell_charge = clamp(
-			spell_charge / spell_mult_inverse,
-			1,
-			max_spell_power
-		)
-
-		# Init spell
-		spell.initialize(
-			$Pivot.global_transform.origin,
-			$Pivot.rotation,
-			spell_charge
-		)
-		spell_charge = 0
+		_init_spell_if_needed()
+		spell.shoot($Pivot.rotation)
+		spell = null
 
 	# Jump
 	if is_on_floor() and Input.is_action_just_pressed("jump"):
@@ -102,6 +81,18 @@ func _get_mouse_intersect():
 	return space_state.intersect_ray(from, to, [], 16) # Collide with ground
 
 
+func _init_spell_if_needed():
+	if not spell:
+		spell = spell_scene.instance()
+		add_child(spell)
+		_update_spell_pos()
+
+
+func _update_spell_pos():
+	spell.set_translation(
+		Vector3(0, 0, -3).rotated(Vector3.UP, $Pivot.rotation.y)
+	)
+
+
 func _on_Area_area_entered(area):
 	emit_signal("new_room_entered", area)
-	room = area

@@ -84,6 +84,7 @@ omni_range = 10.0
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
 shape = SubResource( 1 )
+disabled = true
 
 [node name="VisibilityNotifier" type="VisibilityNotifier" parent="."]
 portal_mode = 3
