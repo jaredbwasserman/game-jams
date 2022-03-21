@@ -29,6 +29,12 @@ func initialize(new_position, new_rotation, spell_charge):
 	$CollisionShape.set_scale(Vector3(spell_charge, spell_charge, spell_charge))
 	$VisibilityNotifier.set_scale(Vector3(spell_charge, spell_charge, spell_charge))
 
+	# Light range
+	$Spatial/Light.omni_range *= spell_charge
+
+	# Light energy
+	$Spatial/Light.light_energy *= spell_charge
+
 	# Velocity
 	var speed = clamp(
 		base_spell_speed - ((spell_charge - 1) * 0.05 * base_spell_speed),

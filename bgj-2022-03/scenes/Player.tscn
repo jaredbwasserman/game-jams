@@ -110,6 +110,11 @@ include_in_bound = false
 mesh = SubResource( 11 )
 material/0 = SubResource( 12 )
 
+[node name="Light" type="OmniLight" parent="Pivot"]
+portal_mode = 2
+include_in_bound = false
+light_energy = 0.5
+
 [node name="CollisionShape" type="CollisionShape" parent="."]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0 )
 shape = SubResource( 1 )

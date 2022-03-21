@@ -76,6 +76,12 @@ preprocess = 1.0
 process_material = SubResource( 2 )
 draw_pass_1 = SubResource( 4 )
 
+[node name="Light" type="OmniLight" parent="Spatial"]
+portal_mode = 3
+include_in_bound = false
+light_energy = 0.5
+omni_range = 10.0
+
 [node name="CollisionShape" type="CollisionShape" parent="."]
 shape = SubResource( 1 )
 
