@@ -20,6 +20,7 @@ Growth
 - Left and right area of game screen use for health and mana display and score or other UI
 - Leash monsters in their rooms so monsters cannot escape from their rooms
 - Mana should drain faster if you keep charging up max strength fireball without shooting it (to discourage always having one charging)
+- Add platforming challenges where if you fall in poison or spikes you take damage and need to jump on platforms to avoid damage
 
 ## Resources
 - https://www.youtube.com/playlist?list=PLaGRTLvEbVzyUMwjUPgrreyRE3AY8jhOK
