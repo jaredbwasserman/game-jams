@@ -110,13 +110,33 @@ include_in_bound = false
 mesh = SubResource( 11 )
 material/0 = SubResource( 12 )
 
-[node name="Light" type="OmniLight" parent="Pivot"]
-portal_mode = 2
-include_in_bound = false
-light_energy = 0.5
-
 [node name="CollisionShape" type="CollisionShape" parent="."]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0 )
 shape = SubResource( 1 )
+
+[node name="FrontLight" type="SpotLight" parent="."]
+transform = Transform( 1, 0, 0, 0, -1, -8.74228e-08, 0, 8.74228e-08, -1, 0, 0, -2 )
+portal_mode = 2
+include_in_bound = false
+
+[node name="BackLight" type="SpotLight" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2 )
+portal_mode = 2
+include_in_bound = false
+
+[node name="TopLight" type="SpotLight" parent="."]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 4, 0 )
+portal_mode = 2
+include_in_bound = false
+
+[node name="LeftLight" type="SpotLight" parent="."]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -2, 0, 0 )
+portal_mode = 2
+include_in_bound = false
+
+[node name="RightLight" type="SpotLight" parent="."]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 2, 0, 0 )
+portal_mode = 2
+include_in_bound = false
 
 [connection signal="area_entered" from="RoomDetector" to="." method="_on_Area_area_entered"]

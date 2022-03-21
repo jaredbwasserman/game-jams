@@ -14,6 +14,7 @@ Growth
    - https://github.com/godotengine/godot/issues/327
 - Make spell visible during charge up and make position offset from front of player
    - Remember to not add collision detection until the spell is actually moving
+- Make lanterns (omni light objects in a rooms) where you shoot fire ball at lantern to make room light up (omni light visibility from off to on)
 
 ## Ideas
 - Necromancer concept
