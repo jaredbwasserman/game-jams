@@ -21,6 +21,8 @@ Growth
 - Leash monsters in their rooms so monsters cannot escape from their rooms
 - Mana should drain faster if you keep charging up max strength fireball without shooting it (to discourage always having one charging)
 - Add platforming challenges where if you fall in poison or spikes you take damage and need to jump on platforms to avoid damage
+- Prevent player from leaving room until enemies have been cleared out
+- Enemies should only start moving after player enters room area
 
 ## Resources
 - https://www.youtube.com/playlist?list=PLaGRTLvEbVzyUMwjUPgrreyRE3AY8jhOK

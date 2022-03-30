@@ -33,4 +33,4 @@ func _update_ground(mesh_node: Node):
 
 
 func _on_Player_new_room_entered(area):
-	_update_ground(area.get_parent().get_node("Ground/MeshInstance"))
+	_update_ground(area.get_parent().get_node("Navigation/NavigationMeshInstance/Ground/MeshInstance"))
