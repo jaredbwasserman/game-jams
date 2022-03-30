@@ -37,7 +37,6 @@ albedo_color = Color( 0.517647, 0.231373, 0.8, 1 )
 [sub_resource type="CapsuleShape" id=1]
 
 [node name="Player" type="KinematicBody"]
-collision_layer = 0
 collision_mask = 14
 script = ExtResource( 2 )
 speed = 32

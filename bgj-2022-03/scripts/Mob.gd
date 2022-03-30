@@ -19,6 +19,7 @@ var current_node = 0
 func _physics_process(delta):
 	if current_node < path.size():
 		var direction: Vector3 = path[current_node] - global_transform.origin
+		direction.y = 0
 		if direction.length() < 1:
 			current_node += 1
 		else:
