@@ -28,8 +28,14 @@ omni_range = 100.0
 omni_attenuation = 0.025
 omni_shadow_mode = 0
 
-[node name="Mob" parent="RoomsRoot/RoomsManager/RoomsList/Room1" instance=ExtResource( 6 )]
+[node name="Mob1" parent="RoomsRoot/RoomsManager/RoomsList/Room1" instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 18.2621, 1.5, -20.0776 )
+
+[node name="Mob2" parent="RoomsRoot/RoomsManager/RoomsList/Room1" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 14.862, 5, -9.094 )
+
+[node name="Mob3" parent="RoomsRoot/RoomsManager/RoomsList/Room1" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 23.341, 1.5, 0 )
 
 [node name="Room5" parent="RoomsRoot/RoomsManager/RoomsList" instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 100, 0, -100 )
