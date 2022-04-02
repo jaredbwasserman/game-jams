@@ -28,6 +28,10 @@ var spell_charge = 0
 var velocity = Vector3.ZERO
 
 
+func _ready():
+	get_tree().set_debug_collisions_hint(false)
+
+
 func add_charge(spell_charge_amount):
 	spell_charge_raw += spell_charge_amount
 
@@ -47,7 +51,7 @@ func _update_spell_size():
 	$Spatial/Ball.set_scale(Vector3(spell_charge, spell_charge, spell_charge))
 	$Spatial/BallShadow.set_scale(Vector3(spell_charge, spell_charge, spell_charge))
 	$Spatial/BallParticles.set_scale(Vector3(spell_charge, spell_charge, spell_charge))
-	$CollisionShape.set_scale(Vector3(spell_charge, spell_charge, spell_charge))
+	$BallCollision.set_scale(Vector3(spell_charge, spell_charge, spell_charge))
 	$VisibilityNotifier.set_scale(Vector3(spell_charge, spell_charge, spell_charge))
 
 	# Light range
@@ -61,6 +65,9 @@ func shoot(new_rotation):
 	# Use global coordinates
 	set_as_toplevel(true)
 
+	# Enable collisions
+	$BallCollision.disabled = false
+
 	# Update velocity
 	var speed = clamp(
 		base_spell_speed - ((spell_charge - 1) * 0.05 * base_spell_speed),
@@ -70,9 +77,6 @@ func shoot(new_rotation):
 	velocity = Vector3.FORWARD * speed
 	velocity = velocity.rotated(Vector3.UP, new_rotation.y)
 
-	# Enable collisions
-	$CollisionShape.disabled = false
-
 
 func _physics_process(_delta):
 	move_and_slide(velocity)
@@ -80,6 +84,10 @@ func _physics_process(_delta):
 		var collision = get_slide_collision(index)
 		if collision:
 			queue_free()
+			if collision.collider.is_in_group("mob"):
+				collision.collider.find_node("Stats").take_damage(
+					pow(spell_charge, 2)
+				)
 
 
 func _on_VisibilityNotifier_camera_exited(camera):

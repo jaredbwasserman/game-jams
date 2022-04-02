@@ -4,7 +4,8 @@ extends KinematicBody
 signal new_room_entered
 
 # How fast the player moves horizontally in meters per second
-export var speed = 14
+export var min_speed = 10
+export var max_speed = 32
 
 # The downward acceleration when in the air, in meters per second squared
 export var fall_acceleration = 75
@@ -64,6 +65,15 @@ func _physics_process(delta):
 
 	if direction != Vector3.ZERO:
 		direction = direction.normalized()
+
+	# Move more slowly while charging spell
+	var speed = max_speed
+	if spell:
+		speed = clamp(
+			speed - 5 * spell.spell_charge,
+			min_speed,
+			max_speed
+		)
 
 	velocity.x = direction.x * speed
 	velocity.z = direction.z * speed

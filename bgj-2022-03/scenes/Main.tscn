@@ -23,19 +23,14 @@ south_open = false
 [node name="OmniLight" type="OmniLight" parent="RoomsRoot/RoomsManager/RoomsList/Room1"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 50, 0 )
 include_in_bound = false
+light_energy = 1.5
 shadow_enabled = true
 omni_range = 100.0
 omni_attenuation = 0.025
 omni_shadow_mode = 0
 
 [node name="Mob1" parent="RoomsRoot/RoomsManager/RoomsList/Room1" instance=ExtResource( 6 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 18.2621, 1.5, -20.0776 )
-
-[node name="Mob2" parent="RoomsRoot/RoomsManager/RoomsList/Room1" instance=ExtResource( 6 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 14.862, 5, -9.094 )
-
-[node name="Mob3" parent="RoomsRoot/RoomsManager/RoomsList/Room1" instance=ExtResource( 6 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 23.341, 1.5, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, -25 )
 
 [node name="Room5" parent="RoomsRoot/RoomsManager/RoomsList" instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 100, 0, -100 )
@@ -59,7 +54,7 @@ east_open = false
 south_open = false
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 25 )
 collision_mask = 30
 spell_scene = ExtResource( 5 )
 

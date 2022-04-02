@@ -47,7 +47,7 @@ color_ramp = SubResource( 6 )
 [sub_resource type="QuadMesh" id=4]
 
 [sub_resource type="SphereShape" id=1]
-radius = 0.25
+radius = 0.5
 
 [node name="Fireball" type="KinematicBody"]
 collision_layer = 0
@@ -82,7 +82,7 @@ include_in_bound = false
 light_energy = 0.5
 omni_range = 10.0
 
-[node name="CollisionShape" type="CollisionShape" parent="."]
+[node name="BallCollision" type="CollisionShape" parent="."]
 shape = SubResource( 1 )
 disabled = true
 
