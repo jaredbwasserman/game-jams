@@ -105,7 +105,7 @@ func _update_spell_pos():
 
 
 func _on_RoomDetector_area_entered(area):
-		# Fix camera
+	# Fix camera
 	emit_signal("new_room_entered", area)
 
 	# Alert enemies

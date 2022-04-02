@@ -1,4 +1,4 @@
-# Blizzard Game Jam 2022-03
+# Fireball Castle
 
 ## Theme
 Growth
