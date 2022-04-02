@@ -13,7 +13,7 @@ export var accel_radius = 40
 export var att_radius = 3.5
 
 # Amount of damage per attack
-export var att_damage = 1
+export var att_damage = 2
 
 # Player
 onready var player: KinematicBody = $"/root/Main/Player"
@@ -34,12 +34,18 @@ var target
 func enable():
 	_on_MoveTimer_timeout()
 	$MoveTimer.start()
+
 	set_physics_process(true)
 
 
 func disable_and_reset():
 	$MoveTimer.stop()
+
+	$Pivot/Face/LeftEye.visible = false
+	$Pivot/Face/RightEye.visible = false
+
 	set_physics_process(false)
+
 	global_transform.origin = spawn_point
 	speed = min_speed
 
@@ -56,6 +62,8 @@ func _dist_to_player():
 
 func _try_attack():
 	if can_attack and _dist_to_player() <= att_radius:
+		$AttAnim.play("attack")
+
 		player.find_node("Stats").take_damage(att_damage)
 		can_attack = false
 		$AttTimer.start()
@@ -79,11 +87,19 @@ func _physics_process(delta):
 	)
 	move_and_slide(dir.normalized() * speed)
 
+	# Open eyes
+	if speed > max_speed/2:
+		$Pivot/Face/LeftEye.visible = true
+		$Pivot/Face/RightEye.visible = true
+
 
 func _on_MoveTimer_timeout():
 	target = player.global_transform.origin
 
 
 func _on_AttTimer_timeout():
+	$AttAnim.stop()
+	$AttAnim.play("RESET")
+
 	can_attack = true
 	$AttTimer.stop()

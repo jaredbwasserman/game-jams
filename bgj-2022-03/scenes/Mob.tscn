@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://scripts/Mob.gd" type="Script" id=1]
 [ext_resource path="res://scenes/Stats.tscn" type="PackedScene" id=2]
@@ -29,6 +29,120 @@ albedo_color = Color( 0.121569, 0.12549, 0.137255, 1 )
 radius = 2.0
 height = 0.1
 
+[sub_resource type="Animation" id=10]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Pivot/Body/RightHand:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 1.35875, 0, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Pivot/Body/LeftHand:translation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( -1.359, 0, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Pivot/Face/RightEye:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0.5, 1, 0.5 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Pivot/Face/LeftEye:rotation_degrees")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 90, 0, 0 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Pivot/Face/LeftEye:scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0.5, 1, 0.5 ) ]
+}
+
+[sub_resource type="Animation" id=11]
+resource_name = "attack"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Pivot/Body/RightHand:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 1 ),
+"transitions": PoolRealArray( 3.86374, 0.210224, 0.129408, 4.43828, 3.86374, 3.86374 ),
+"update": 0,
+"values": [ Vector3( 1.35875, 0, 0 ), Vector3( 1.8, 1, 1 ), Vector3( 1.5, 1.5, 0 ), Vector3( 1.1, 1.2, -0.5 ), Vector3( 1.35875, 0, 0 ), Vector3( 1.35875, 0, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Pivot/Body/LeftHand:translation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.2, 0.3, 0.4, 0.5, 0.6, 1 ),
+"transitions": PoolRealArray( 3.86, 0.21, 0.129, 4.43, 3.86, 3.86 ),
+"update": 0,
+"values": [ Vector3( -1.359, 0, 0 ), Vector3( -1.359, 1, 1 ), Vector3( -1.5, 1.5, 0 ), Vector3( -1.1, 1.2, -0.5 ), Vector3( -1.359, 0, 0 ), Vector3( -1.359, 0, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Pivot/Face/RightEye:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 1 ),
+"transitions": PoolRealArray( 0.129408, 1, 0.129408, 0.129408 ),
+"update": 0,
+"values": [ Vector3( 0.5, 1, 0.5 ), Vector3( 0.75, 1.5, 0.75 ), Vector3( 0.5, 1, 0.5 ), Vector3( 0.5, 1, 0.5 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Pivot/Face/LeftEye:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 1 ),
+"transitions": PoolRealArray( 0.129, 1, 0.129, 0.129 ),
+"update": 0,
+"values": [ Vector3( 0.5, 1, 0.5 ), Vector3( 0.75, 1.5, 0.75 ), Vector3( 0.5, 1, 0.5 ), Vector3( 0.5, 1, 0.5 ) ]
+}
+
 [node name="Mob" type="KinematicBody" groups=["mob"]]
 collision_layer = 2
 collision_mask = 46
@@ -45,14 +159,14 @@ mesh = SubResource( 1 )
 material/0 = SubResource( 2 )
 
 [node name="RightEye" type="MeshInstance" parent="Pivot/Face"]
-transform = Transform( 0.5, 0, 0, 0, -2.18557e-08, -0.5, 0, 1, -4.37114e-08, 0.47628, 0.79644, 0.000146151 )
+transform = Transform( 0.5, 0, 0, 0, -4.37114e-08, -0.5, 0, 1, -2.18557e-08, 0.47628, 0.79644, 0.000146151 )
 include_in_bound = false
 mesh = SubResource( 3 )
 skeleton = NodePath("../..")
 material/0 = SubResource( 4 )
 
 [node name="LeftEye" type="MeshInstance" parent="Pivot/Face"]
-transform = Transform( 0.5, 0, 0, 0, -2.18557e-08, -0.5, 0, 1, -4.37114e-08, -0.47625, 0.79625, 0.00016427 )
+transform = Transform( 0.5, 0, 0, 0, -4.37114e-08, -0.5, 0, 1, -2.18557e-08, -0.47625, 0.79625, 0.00016427 )
 include_in_bound = false
 mesh = SubResource( 3 )
 skeleton = NodePath("../..")
@@ -86,6 +200,14 @@ wait_time = 0.2
 [node name="AttTimer" type="Timer" parent="."]
 
 [node name="Stats" parent="." instance=ExtResource( 2 )]
+
+[node name="TopLight" type="DirectionalLight" parent="."]
+transform = Transform( 1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 5, 0 )
+visible = false
+
+[node name="AttAnim" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( 10 )
+anims/attack = SubResource( 11 )
 
 [connection signal="timeout" from="MoveTimer" to="." method="_on_MoveTimer_timeout"]
 [connection signal="timeout" from="AttTimer" to="." method="_on_AttTimer_timeout"]
