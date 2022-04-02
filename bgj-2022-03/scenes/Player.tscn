@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://assets/models/hat.obj" type="ArrayMesh" id=1]
 [ext_resource path="res://scripts/Player.gd" type="Script" id=2]
@@ -36,6 +36,142 @@ size = Vector3( 1, 1.5, 0.1 )
 albedo_color = Color( 0.517647, 0.231373, 0.8, 1 )
 
 [sub_resource type="CapsuleShape" id=1]
+
+[sub_resource type="Animation" id=13]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Pivot/Hat:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0, 1.37147, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Pivot/Face:translation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0.818934, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Pivot/Body:translation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0, -0.297131, 7.10543e-15 ) ]
+}
+
+[sub_resource type="Animation" id=14]
+resource_name = "walk"
+length = 1.2
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Pivot/Hat:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 2.73208, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 1.6, 0 ), Vector3( 0, 1.4, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Pivot/Face:translation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.7 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0.818934, 0 ), Vector3( 0, 1, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Pivot/Body:translation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.6 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, -0.297131, 7.10543e-15 ), Vector3( 0, 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=15]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Pivot/Body/RightHand:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 1.35875, 0, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Pivot/Body/LeftHand:translation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( -1.359, 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=16]
+resource_name = "cast"
+length = 1.2
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Pivot/Body/RightHand:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.4, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 2, 1.5, 0 ), Vector3( 1.8, 1.5, 0.2 ), Vector3( 1.8, 1.5, -0.2 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Pivot/Body/LeftHand:translation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.4, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( -2, 1.5, 0 ), Vector3( -1.8, 1.5, 0.2 ), Vector3( -1.8, 1.5, -0.2 ) ]
+}
 
 [node name="Player" type="KinematicBody"]
 collision_mask = 14
@@ -102,11 +238,12 @@ include_in_bound = false
 mesh = SubResource( 9 )
 material/0 = SubResource( 10 )
 
-[node name="Cape" type="MeshInstance" parent="Pivot"]
-transform = Transform( 1, 0, 0, 0, 0.964428, 0.264344, 0, -0.264344, 0.964428, 0, -0.332641, 0.850642 )
+[node name="Cape" type="MeshInstance" parent="Pivot/Body"]
+transform = Transform( 1.33333, 0, 0, 0, 0.352459, -1.2859, 0, 1.2859, 0.352459, 0, -1.1944, -0.19128 )
 portal_mode = 2
 include_in_bound = false
 mesh = SubResource( 11 )
+skeleton = NodePath("../..")
 material/0 = SubResource( 12 )
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
@@ -140,6 +277,13 @@ include_in_bound = false
 
 [node name="Stats" parent="." instance=ExtResource( 3 )]
 
-[connection signal="area_entered" from="RoomDetector" to="." method="_on_Area_area_entered"]
+[node name="WalkAnim" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( 13 )
+anims/walk = SubResource( 14 )
+
+[node name="CastAnim" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( 15 )
+anims/cast = SubResource( 16 )
+
 [connection signal="area_entered" from="RoomDetector" to="." method="_on_RoomDetector_area_entered"]
 [connection signal="area_exited" from="RoomDetector" to="." method="_on_RoomDetector_area_exited"]

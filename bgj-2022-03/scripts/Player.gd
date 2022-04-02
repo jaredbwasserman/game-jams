@@ -37,12 +37,18 @@ func _physics_process(delta):
 
 	# Power up spell
 	if Input.is_action_pressed("shoot"):
+		$CastAnim.play("cast")
+		$CastAnim.playback_speed = 4
+
 		_init_spell_if_needed()
 		_update_spell_pos()
 		spell.add_charge(1)
 
 	# Shoot spell
 	if Input.is_action_just_released("shoot"):
+		$CastAnim.stop()
+		$CastAnim.play("RESET")
+
 		_init_spell_if_needed()
 		spell.shoot($Pivot.rotation)
 		spell = null
@@ -63,8 +69,7 @@ func _physics_process(delta):
 	if Input.is_action_pressed("move_forward"):
 		direction.z -= 1
 
-	if direction != Vector3.ZERO:
-		direction = direction.normalized()
+	direction = direction.normalized()
 
 	# Move more slowly while charging spell
 	var speed = max_speed
@@ -74,6 +79,18 @@ func _physics_process(delta):
 			min_speed,
 			max_speed
 		)
+
+	# Animation
+	if direction != Vector3.ZERO and is_on_floor():
+		$WalkAnim.play("walk")
+		$WalkAnim.playback_speed = clamp(
+			4 * speed/max_speed,
+			1,
+			4
+		)
+	else:
+		$WalkAnim.stop()
+		$WalkAnim.play("RESET")
 
 	velocity.x = direction.x * speed
 	velocity.z = direction.z * speed

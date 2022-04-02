@@ -10,7 +10,7 @@ export var max_speed = 25
 export var accel_radius = 40
 
 # Radius can attack
-export var att_radius = 3
+export var att_radius = 3.5
 
 # Amount of damage per attack
 export var att_damage = 1
@@ -32,6 +32,7 @@ var target
 
 
 func enable():
+	_on_MoveTimer_timeout()
 	$MoveTimer.start()
 	set_physics_process(true)
 
@@ -45,7 +46,6 @@ func disable_and_reset():
 
 func _ready():
 	spawn_point = global_transform.origin
-	target = spawn_point
 	disable_and_reset()
 
 
