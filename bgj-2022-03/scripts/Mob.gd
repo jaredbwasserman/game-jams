@@ -85,6 +85,5 @@ func _on_MoveTimer_timeout():
 
 
 func _on_AttTimer_timeout():
-	print("reset att")
 	can_attack = true
 	$AttTimer.stop()

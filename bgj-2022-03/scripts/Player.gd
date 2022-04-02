@@ -78,10 +78,6 @@ func _physics_process(delta):
 	velocity.x = direction.x * speed
 	velocity.z = direction.z * speed
 	velocity.y -= fall_acceleration * delta
-	
-	if velocity.x != 0 or velocity.z != 0:
-		print(transform.origin)
-	
 	velocity = move_and_slide(velocity, Vector3.UP)
 
 
