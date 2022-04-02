@@ -136,3 +136,11 @@ func _on_RoomDetector_area_exited(area):
 	for child in area.get_parent().get_children():
 		if child is Mob:
 			child.disable_and_reset()
+
+
+func _on_Stats_took_damage_signal():
+	$DamageAnim.play("damage")
+
+
+func _on_Stats_dead_signal():
+	pass # Replace with function body.

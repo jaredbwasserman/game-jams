@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://assets/models/hat.obj" type="ArrayMesh" id=1]
 [ext_resource path="res://scripts/Player.gd" type="Script" id=2]
@@ -173,6 +173,37 @@ tracks/1/keys = {
 "values": [ Vector3( -2, 1.5, 0 ), Vector3( -1.8, 1.5, 0.2 ), Vector3( -1.8, 1.5, -0.2 ) ]
 }
 
+[sub_resource type="Animation" id=17]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Pivot:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+
+[sub_resource type="Animation" id=18]
+resource_name = "damage"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("Pivot:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.001, 0.1, 0.2, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ true, true, false, true, false, true ]
+}
+
 [node name="Player" type="KinematicBody"]
 collision_mask = 14
 script = ExtResource( 2 )
@@ -285,5 +316,11 @@ anims/walk = SubResource( 14 )
 anims/RESET = SubResource( 15 )
 anims/cast = SubResource( 16 )
 
+[node name="DamageAnim" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( 17 )
+anims/damage = SubResource( 18 )
+
 [connection signal="area_entered" from="RoomDetector" to="." method="_on_RoomDetector_area_entered"]
 [connection signal="area_exited" from="RoomDetector" to="." method="_on_RoomDetector_area_exited"]
+[connection signal="dead_signal" from="Stats" to="." method="_on_Stats_dead_signal"]
+[connection signal="took_damage_signal" from="Stats" to="." method="_on_Stats_took_damage_signal"]

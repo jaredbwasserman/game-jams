@@ -24,6 +24,9 @@ var speed = min_speed
 # Able to attack (based on timer)
 var can_attack = true
 
+# Dead
+var is_dead = false
+
 # Spawn point
 var spawn_point
 
@@ -32,13 +35,19 @@ var target
 
 
 func enable():
+	if is_dead:
+		return
+
 	_on_MoveTimer_timeout()
 	$MoveTimer.start()
 
 	set_physics_process(true)
 
 
-func disable_and_reset():
+func disable_and_reset(reset_point=spawn_point):
+	if is_dead:
+		return
+
 	$MoveTimer.stop()
 
 	$Pivot/Face/LeftEye.visible = false
@@ -46,7 +55,7 @@ func disable_and_reset():
 
 	set_physics_process(false)
 
-	global_transform.origin = spawn_point
+	global_transform.origin = reset_point
 	speed = min_speed
 
 
@@ -98,8 +107,23 @@ func _on_MoveTimer_timeout():
 
 
 func _on_AttTimer_timeout():
-	$AttAnim.stop()
-	$AttAnim.play("RESET")
-
 	can_attack = true
 	$AttTimer.stop()
+
+
+func _on_Stats_took_damage_signal():
+	$DamageAnim.play("damage")
+
+
+func _on_Stats_dead_signal():
+	$DeathAnim.play("die")
+	$DeathTimer.start()
+
+	disable_and_reset(global_transform.origin)
+	is_dead = true
+
+
+func _on_DeathTimer_timeout():
+	$DeathTimer.stop()
+	visible = false
+	global_transform.origin = Vector3(0, -1000, 0)
