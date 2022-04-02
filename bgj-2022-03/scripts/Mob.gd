@@ -120,6 +120,7 @@ func _on_Stats_dead_signal():
 	$DeathTimer.start()
 
 	disable_and_reset(global_transform.origin)
+	$CollisionShape.disabled = true
 	is_dead = true
 
 
