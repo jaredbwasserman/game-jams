@@ -28,10 +28,6 @@ var spell_charge = 0
 var velocity = Vector3.ZERO
 
 
-func _ready():
-	get_tree().set_debug_collisions_hint(false)
-
-
 func add_charge(spell_charge_amount):
 	spell_charge_raw += spell_charge_amount
 

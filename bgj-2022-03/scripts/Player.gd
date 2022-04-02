@@ -78,6 +78,10 @@ func _physics_process(delta):
 	velocity.x = direction.x * speed
 	velocity.z = direction.z * speed
 	velocity.y -= fall_acceleration * delta
+	
+	if velocity.x != 0 or velocity.z != 0:
+		print(transform.origin)
+	
 	velocity = move_and_slide(velocity, Vector3.UP)
 
 
@@ -104,5 +108,18 @@ func _update_spell_pos():
 	)
 
 
-func _on_Area_area_entered(area):
+func _on_RoomDetector_area_entered(area):
+		# Fix camera
 	emit_signal("new_room_entered", area)
+
+	# Alert enemies
+	for child in area.get_parent().get_children():
+		if child is Mob:
+			child.enable()
+
+
+func _on_RoomDetector_area_exited(area):
+	# Alert enemies
+	for child in area.get_parent().get_children():
+		if child is Mob:
+			child.disable_and_reset()

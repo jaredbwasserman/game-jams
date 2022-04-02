@@ -9,12 +9,18 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "KinematicBody",
+"class": "Mob",
+"language": "GDScript",
+"path": "res://scripts/Mob.gd"
+}, {
 "base": "Node",
 "class": "Stats",
 "language": "GDScript",
 "path": "res://scripts/Stats.gd"
 } ]
 _global_script_class_icons={
+"Mob": "",
 "Stats": ""
 }
 

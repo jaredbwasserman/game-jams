@@ -1,8 +1,10 @@
 extends KinematicBody
 
+class_name Mob
+
 # Speed limits
 export var min_speed = 1
-export var max_speed = 35
+export var max_speed = 25
 
 # Radius to start accelerating
 export var accel_radius = 40
@@ -13,9 +15,6 @@ export var att_radius = 3
 # Amount of damage per attack
 export var att_damage = 1
 
-# Navigation of Room
-onready var nav: Navigation = $"../Navigation"
-
 # Player
 onready var player: KinematicBody = $"/root/Main/Player"
 
@@ -25,24 +24,38 @@ var speed = min_speed
 # Able to attack (based on timer)
 var can_attack = true
 
-# Path
-var path = []
+# Spawn point
+var spawn_point
 
-# Current path node
-var current_node = 0
+# Movement target
+var target
+
+
+func enable():
+	$MoveTimer.start()
+	set_physics_process(true)
+
+
+func disable_and_reset():
+	$MoveTimer.stop()
+	set_physics_process(false)
+	global_transform.origin = spawn_point
+	speed = min_speed
 
 
 func _ready():
-	get_tree().set_debug_collisions_hint(false)
+	spawn_point = global_transform.origin
+	target = spawn_point
+	disable_and_reset()
 
 
-func dist_to_player():
+func _dist_to_player():
 	var player_dir = player.global_transform.origin - global_transform.origin
 	return player_dir.length()
 
 
-func try_attack():
-	if can_attack and dist_to_player() <= att_radius:
+func _try_attack():
+	if can_attack and _dist_to_player() <= att_radius:
 		player.find_node("Stats").take_damage(att_damage)
 		can_attack = false
 		$AttTimer.start()
@@ -50,39 +63,25 @@ func try_attack():
 
 func _physics_process(delta):
 	# Try to attack
-	try_attack()
+	_try_attack()
 
-	# Move
-	if current_node < path.size():
-		var path_dir: Vector3 = path[current_node] - global_transform.origin
-		path_dir.y = 0
-		if path_dir.length() < 1:
-			current_node += 1
-		else:
-			# Rotation
-			var pivot = $Pivot
-			pivot.look_at(path[current_node], Vector3.UP)
-			pivot.rotation = Vector3(0, pivot.rotation.y, 0)
+	# Rotation
+	var pivot = $Pivot
+	pivot.look_at(target, Vector3.UP)
+	pivot.rotation = Vector3(0, pivot.rotation.y, 0)
 
-			# Movement
-			speed = lerp(
-				speed,
-				max_speed,
-				clamp(1 - dist_to_player()/accel_radius, 0, 1)
-			)
-			move_and_slide(path_dir.normalized() * speed)
-
-
-func update_path():
-	path = nav.get_simple_path(
-		global_transform.origin,
-		player.global_transform.origin
+	# Movement
+	var dir = target - global_transform.origin
+	speed = lerp(
+		speed,
+		max_speed,
+		clamp(1 - _dist_to_player()/accel_radius, 0, 1)
 	)
-	current_node = 0
+	move_and_slide(dir.normalized() * speed)
 
 
 func _on_MoveTimer_timeout():
-	update_path()
+	target = player.global_transform.origin
 
 
 func _on_AttTimer_timeout():
