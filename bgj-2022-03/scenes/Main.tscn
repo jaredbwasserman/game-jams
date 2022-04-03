@@ -175,68 +175,68 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 1.5, -20 )
 [node name="Mob2" parent="RoomsRoot/RoomsManager/RoomsList/DUNGEON 4" instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 1.5, 20 )
 
-[node name="SpikesRight" type="Spatial" parent="RoomsRoot/RoomsManager/RoomsList/DUNGEON 4"]
+[node name="SpikesDiag1" type="Spatial" parent="RoomsRoot/RoomsManager/RoomsList/DUNGEON 4"]
 
-[node name="Spikes1" parent="RoomsRoot/RoomsManager/RoomsList/DUNGEON 4/SpikesRight" instance=ExtResource( 7 )]
+[node name="Spikes1" parent="RoomsRoot/RoomsManager/RoomsList/DUNGEON 4/SpikesDiag1" instance=ExtResource( 7 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -45, -0.24, 45 )
 
-[node name="Spikes2" parent="RoomsRoot/RoomsManager/RoomsList/DUNGEON 4/SpikesRight" instance=ExtResource( 7 )]
+[node name="Spikes2" parent="RoomsRoot/RoomsManager/RoomsList/DUNGEON 4/SpikesDiag1" instance=ExtResource( 7 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -35, -0.24, 35 )
 
-[node name="Spikes3" parent="RoomsRoot/RoomsManager/RoomsList/DUNGEON 4/SpikesRight" instance=ExtResource( 7 )]
+[node name="Spikes3" parent="RoomsRoot/RoomsManager/RoomsList/DUNGEON 4/SpikesDiag1" instance=ExtResource( 7 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -25, -0.24, 25 )
 
-[node name="Spikes4" parent="RoomsRoot/RoomsManager/RoomsList/DUNGEON 4/SpikesRight" instance=ExtResource( 7 )]
+[node name="Spikes4" parent="RoomsRoot/RoomsManager/RoomsList/DUNGEON 4/SpikesDiag1" instance=ExtResource( 7 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -15, -0.24, 15 )
 
-[node name="Spikes5" parent="RoomsRoot/RoomsManager/RoomsList/DUNGEON 4/SpikesRight" instance=ExtResource( 7 )]
+[node name="Spikes5" parent="RoomsRoot/RoomsManager/RoomsList/DUNGEON 4/SpikesDiag1" instance=ExtResource( 7 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5, -0.24, 5 )
 
-[node name="Spikes6" parent="RoomsRoot/RoomsManager/RoomsList/DUNGEON 4/SpikesRight" instance=ExtResource( 7 )]
+[node name="Spikes6" parent="RoomsRoot/RoomsManager/RoomsList/DUNGEON 4/SpikesDiag1" instance=ExtResource( 7 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, -0.24, -5 )
 
-[node name="Spikes7" parent="RoomsRoot/RoomsManager/RoomsList/DUNGEON 4/SpikesRight" instance=ExtResource( 7 )]
+[node name="Spikes7" parent="RoomsRoot/RoomsManager/RoomsList/DUNGEON 4/SpikesDiag1" instance=ExtResource( 7 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15, -0.24, -15 )
 
-[node name="Spikes8" parent="RoomsRoot/RoomsManager/RoomsList/DUNGEON 4/SpikesRight" instance=ExtResource( 7 )]
+[node name="Spikes8" parent="RoomsRoot/RoomsManager/RoomsList/DUNGEON 4/SpikesDiag1" instance=ExtResource( 7 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 25, -0.24, -25 )
 
-[node name="Spikes9" parent="RoomsRoot/RoomsManager/RoomsList/DUNGEON 4/SpikesRight" instance=ExtResource( 7 )]
+[node name="Spikes9" parent="RoomsRoot/RoomsManager/RoomsList/DUNGEON 4/SpikesDiag1" instance=ExtResource( 7 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 35, -0.24, -35 )
 
-[node name="Spikes10" parent="RoomsRoot/RoomsManager/RoomsList/DUNGEON 4/SpikesRight" instance=ExtResource( 7 )]
+[node name="Spikes10" parent="RoomsRoot/RoomsManager/RoomsList/DUNGEON 4/SpikesDiag1" instance=ExtResource( 7 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 45, -0.24, -45 )
 
-[node name="SpikesLeft" type="Spatial" parent="RoomsRoot/RoomsManager/RoomsList/DUNGEON 4"]
+[node name="SpikesDiag2" type="Spatial" parent="RoomsRoot/RoomsManager/RoomsList/DUNGEON 4"]
 
-[node name="Spikes1" parent="RoomsRoot/RoomsManager/RoomsList/DUNGEON 4/SpikesLeft" instance=ExtResource( 7 )]
+[node name="Spikes1" parent="RoomsRoot/RoomsManager/RoomsList/DUNGEON 4/SpikesDiag2" instance=ExtResource( 7 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -45, -0.24, -45 )
 
-[node name="Spikes2" parent="RoomsRoot/RoomsManager/RoomsList/DUNGEON 4/SpikesLeft" instance=ExtResource( 7 )]
+[node name="Spikes2" parent="RoomsRoot/RoomsManager/RoomsList/DUNGEON 4/SpikesDiag2" instance=ExtResource( 7 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -35, -0.24, -35 )
 
-[node name="Spikes3" parent="RoomsRoot/RoomsManager/RoomsList/DUNGEON 4/SpikesLeft" instance=ExtResource( 7 )]
+[node name="Spikes3" parent="RoomsRoot/RoomsManager/RoomsList/DUNGEON 4/SpikesDiag2" instance=ExtResource( 7 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -25, -0.24, -25 )
 
-[node name="Spikes4" parent="RoomsRoot/RoomsManager/RoomsList/DUNGEON 4/SpikesLeft" instance=ExtResource( 7 )]
+[node name="Spikes4" parent="RoomsRoot/RoomsManager/RoomsList/DUNGEON 4/SpikesDiag2" instance=ExtResource( 7 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -15, -0.24, -15 )
 
-[node name="Spikes5" parent="RoomsRoot/RoomsManager/RoomsList/DUNGEON 4/SpikesLeft" instance=ExtResource( 7 )]
+[node name="Spikes5" parent="RoomsRoot/RoomsManager/RoomsList/DUNGEON 4/SpikesDiag2" instance=ExtResource( 7 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5, -0.24, -5 )
 
-[node name="Spikes6" parent="RoomsRoot/RoomsManager/RoomsList/DUNGEON 4/SpikesLeft" instance=ExtResource( 7 )]
+[node name="Spikes6" parent="RoomsRoot/RoomsManager/RoomsList/DUNGEON 4/SpikesDiag2" instance=ExtResource( 7 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, -0.24, 5 )
 
-[node name="Spikes7" parent="RoomsRoot/RoomsManager/RoomsList/DUNGEON 4/SpikesLeft" instance=ExtResource( 7 )]
+[node name="Spikes7" parent="RoomsRoot/RoomsManager/RoomsList/DUNGEON 4/SpikesDiag2" instance=ExtResource( 7 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15, -0.24, 15 )
 
-[node name="Spikes8" parent="RoomsRoot/RoomsManager/RoomsList/DUNGEON 4/SpikesLeft" instance=ExtResource( 7 )]
+[node name="Spikes8" parent="RoomsRoot/RoomsManager/RoomsList/DUNGEON 4/SpikesDiag2" instance=ExtResource( 7 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 25, -0.24, 25 )
 
-[node name="Spikes9" parent="RoomsRoot/RoomsManager/RoomsList/DUNGEON 4/SpikesLeft" instance=ExtResource( 7 )]
+[node name="Spikes9" parent="RoomsRoot/RoomsManager/RoomsList/DUNGEON 4/SpikesDiag2" instance=ExtResource( 7 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 35, -0.24, 35 )
 
-[node name="Spikes10" parent="RoomsRoot/RoomsManager/RoomsList/DUNGEON 4/SpikesLeft" instance=ExtResource( 7 )]
+[node name="Spikes10" parent="RoomsRoot/RoomsManager/RoomsList/DUNGEON 4/SpikesDiag2" instance=ExtResource( 7 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 45, -0.24, 45 )
 
 [node name="KITCHEN" parent="RoomsRoot/RoomsManager/RoomsList" instance=ExtResource( 4 )]
@@ -314,15 +314,51 @@ omni_range = 100.0
 omni_attenuation = 0.025
 omni_shadow_mode = 0
 
+[node name="Mob1" parent="RoomsRoot/RoomsManager/RoomsList/HALLWAY 1" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 1.5, 0 )
+
+[node name="Mob2" parent="RoomsRoot/RoomsManager/RoomsList/HALLWAY 1" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, -25 )
+
+[node name="Mob" parent="RoomsRoot/RoomsManager/RoomsList/HALLWAY 1" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 1.5, 0 )
+
 [node name="WINE CELLAR" parent="RoomsRoot/RoomsManager/RoomsList" instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -100, 0, -200 )
 south_open = false
 west_open = false
 
+[node name="Mob1" parent="RoomsRoot/RoomsManager/RoomsList/WINE CELLAR" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, -25 )
+
+[node name="Mob" parent="RoomsRoot/RoomsManager/RoomsList/WINE CELLAR" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 25 )
+
+[node name="Spikes1" parent="RoomsRoot/RoomsManager/RoomsList/WINE CELLAR" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 25, -0.24, -25 )
+
+[node name="Spikes2" parent="RoomsRoot/RoomsManager/RoomsList/WINE CELLAR" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 25, -0.24, 25 )
+
+[node name="Spikes3" parent="RoomsRoot/RoomsManager/RoomsList/WINE CELLAR" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -25, -0.24, 25 )
+
+[node name="Spikes4" parent="RoomsRoot/RoomsManager/RoomsList/WINE CELLAR" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -25, -0.24, -25 )
+
 [node name="HALLWAY 2" parent="RoomsRoot/RoomsManager/RoomsList" instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -100, 0, -300 )
 east_open = false
 west_open = false
+
+[node name="OmniLight" type="OmniLight" parent="RoomsRoot/RoomsManager/RoomsList/HALLWAY 2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 50, 0 )
+include_in_bound = false
+light_energy = 1.5
+shadow_enabled = true
+omni_range = 100.0
+omni_attenuation = 0.025
+omni_shadow_mode = 0
 
 [node name="BATHROOM" parent="RoomsRoot/RoomsManager/RoomsList" instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -100, 0, -400 )
@@ -338,6 +374,12 @@ omni_range = 100.0
 omni_attenuation = 0.025
 omni_shadow_mode = 0
 
+[node name="Mob1" parent="RoomsRoot/RoomsManager/RoomsList/BATHROOM" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 1.5, 0 )
+
+[node name="Mob2" parent="RoomsRoot/RoomsManager/RoomsList/BATHROOM" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 1.5, 25 )
+
 [node name="BEDROOM" parent="RoomsRoot/RoomsManager/RoomsList" instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -400 )
 east_open = false
@@ -352,6 +394,9 @@ omni_range = 100.0
 omni_attenuation = 0.025
 omni_shadow_mode = 0
 
+[node name="Mob1" parent="RoomsRoot/RoomsManager/RoomsList/BEDROOM" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0 )
+
 [node name="STUDY" parent="RoomsRoot/RoomsManager/RoomsList" instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -300 )
 west_open = false
@@ -364,6 +409,21 @@ shadow_enabled = true
 omni_range = 100.0
 omni_attenuation = 0.025
 omni_shadow_mode = 0
+
+[node name="Mob1" parent="RoomsRoot/RoomsManager/RoomsList/STUDY" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 1.5, 30 )
+
+[node name="Mob2" parent="RoomsRoot/RoomsManager/RoomsList/STUDY" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 1.5, 30 )
+
+[node name="Mob3" parent="RoomsRoot/RoomsManager/RoomsList/STUDY" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 30 )
+
+[node name="Mob4" parent="RoomsRoot/RoomsManager/RoomsList/STUDY" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 1.5, 30 )
+
+[node name="Mob5" parent="RoomsRoot/RoomsManager/RoomsList/STUDY" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 1.5, 30 )
 
 [node name="GARDEN" parent="RoomsRoot/RoomsManager/RoomsList" instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 100, 0, -300 )
@@ -393,6 +453,134 @@ shadow_enabled = true
 omni_range = 100.0
 omni_attenuation = 0.025
 omni_shadow_mode = 0
+
+[node name="SpikesDiag1" type="Spatial" parent="RoomsRoot/RoomsManager/RoomsList/THRONE ROOM"]
+
+[node name="Spikes1" parent="RoomsRoot/RoomsManager/RoomsList/THRONE ROOM/SpikesDiag1" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -45, -0.24, 45 )
+
+[node name="Spikes2" parent="RoomsRoot/RoomsManager/RoomsList/THRONE ROOM/SpikesDiag1" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -35, -0.24, 35 )
+
+[node name="Spikes3" parent="RoomsRoot/RoomsManager/RoomsList/THRONE ROOM/SpikesDiag1" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -25, -0.24, 25 )
+
+[node name="Spikes4" parent="RoomsRoot/RoomsManager/RoomsList/THRONE ROOM/SpikesDiag1" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -15, -0.24, 15 )
+
+[node name="Spikes5" parent="RoomsRoot/RoomsManager/RoomsList/THRONE ROOM/SpikesDiag1" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5, -0.24, 5 )
+
+[node name="Spikes6" parent="RoomsRoot/RoomsManager/RoomsList/THRONE ROOM/SpikesDiag1" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, -0.24, -5 )
+
+[node name="Spikes7" parent="RoomsRoot/RoomsManager/RoomsList/THRONE ROOM/SpikesDiag1" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15, -0.24, -15 )
+
+[node name="Spikes8" parent="RoomsRoot/RoomsManager/RoomsList/THRONE ROOM/SpikesDiag1" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 25, -0.24, -25 )
+
+[node name="Spikes9" parent="RoomsRoot/RoomsManager/RoomsList/THRONE ROOM/SpikesDiag1" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 35, -0.24, -35 )
+
+[node name="Spikes10" parent="RoomsRoot/RoomsManager/RoomsList/THRONE ROOM/SpikesDiag1" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 45, -0.24, -45 )
+
+[node name="SpikesDiag2" type="Spatial" parent="RoomsRoot/RoomsManager/RoomsList/THRONE ROOM"]
+
+[node name="Spikes1" parent="RoomsRoot/RoomsManager/RoomsList/THRONE ROOM/SpikesDiag2" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -45, -0.24, -45 )
+
+[node name="Spikes2" parent="RoomsRoot/RoomsManager/RoomsList/THRONE ROOM/SpikesDiag2" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -35, -0.24, -35 )
+
+[node name="Spikes3" parent="RoomsRoot/RoomsManager/RoomsList/THRONE ROOM/SpikesDiag2" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -25, -0.24, -25 )
+
+[node name="Spikes4" parent="RoomsRoot/RoomsManager/RoomsList/THRONE ROOM/SpikesDiag2" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -15, -0.24, -15 )
+
+[node name="Spikes5" parent="RoomsRoot/RoomsManager/RoomsList/THRONE ROOM/SpikesDiag2" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5, -0.24, -5 )
+
+[node name="Spikes6" parent="RoomsRoot/RoomsManager/RoomsList/THRONE ROOM/SpikesDiag2" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, -0.24, 5 )
+
+[node name="Spikes7" parent="RoomsRoot/RoomsManager/RoomsList/THRONE ROOM/SpikesDiag2" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15, -0.24, 15 )
+
+[node name="Spikes8" parent="RoomsRoot/RoomsManager/RoomsList/THRONE ROOM/SpikesDiag2" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 25, -0.24, 25 )
+
+[node name="Spikes9" parent="RoomsRoot/RoomsManager/RoomsList/THRONE ROOM/SpikesDiag2" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 35, -0.24, 35 )
+
+[node name="Spikes10" parent="RoomsRoot/RoomsManager/RoomsList/THRONE ROOM/SpikesDiag2" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 45, -0.24, 45 )
+
+[node name="SpikesLeft" type="Spatial" parent="RoomsRoot/RoomsManager/RoomsList/THRONE ROOM"]
+
+[node name="Spikes1" parent="RoomsRoot/RoomsManager/RoomsList/THRONE ROOM/SpikesLeft" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -45, -0.24, -25 )
+
+[node name="Spikes2" parent="RoomsRoot/RoomsManager/RoomsList/THRONE ROOM/SpikesLeft" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -45, -0.24, -5 )
+
+[node name="Spikes3" parent="RoomsRoot/RoomsManager/RoomsList/THRONE ROOM/SpikesLeft" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -45, -0.24, 5 )
+
+[node name="Spikes4" parent="RoomsRoot/RoomsManager/RoomsList/THRONE ROOM/SpikesLeft" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -45, -0.24, 25 )
+
+[node name="Spikes5" parent="RoomsRoot/RoomsManager/RoomsList/THRONE ROOM/SpikesLeft" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -35, -0.24, -5 )
+
+[node name="Spikes6" parent="RoomsRoot/RoomsManager/RoomsList/THRONE ROOM/SpikesLeft" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -35, -0.24, 5 )
+
+[node name="Spikes7" parent="RoomsRoot/RoomsManager/RoomsList/THRONE ROOM/SpikesLeft" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -25, -0.24, -5 )
+
+[node name="Spikes8" parent="RoomsRoot/RoomsManager/RoomsList/THRONE ROOM/SpikesLeft" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -25, -0.24, 5 )
+
+[node name="Spikes9" parent="RoomsRoot/RoomsManager/RoomsList/THRONE ROOM/SpikesLeft" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -35, -0.24, -15 )
+
+[node name="Spikes10" parent="RoomsRoot/RoomsManager/RoomsList/THRONE ROOM/SpikesLeft" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -35, -0.24, 15 )
+
+[node name="SpikesRight" type="Spatial" parent="RoomsRoot/RoomsManager/RoomsList/THRONE ROOM"]
+
+[node name="Spikes1" parent="RoomsRoot/RoomsManager/RoomsList/THRONE ROOM/SpikesRight" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 45, -0.24, -25 )
+
+[node name="Spikes2" parent="RoomsRoot/RoomsManager/RoomsList/THRONE ROOM/SpikesRight" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 45, -0.24, -5 )
+
+[node name="Spikes3" parent="RoomsRoot/RoomsManager/RoomsList/THRONE ROOM/SpikesRight" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 45, -0.24, 5 )
+
+[node name="Spikes4" parent="RoomsRoot/RoomsManager/RoomsList/THRONE ROOM/SpikesRight" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 45, -0.24, 25 )
+
+[node name="Spikes5" parent="RoomsRoot/RoomsManager/RoomsList/THRONE ROOM/SpikesRight" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 35, -0.24, -5 )
+
+[node name="Spikes6" parent="RoomsRoot/RoomsManager/RoomsList/THRONE ROOM/SpikesRight" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 35, -0.24, 5 )
+
+[node name="Spikes7" parent="RoomsRoot/RoomsManager/RoomsList/THRONE ROOM/SpikesRight" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 25, -0.24, -5 )
+
+[node name="Spikes8" parent="RoomsRoot/RoomsManager/RoomsList/THRONE ROOM/SpikesRight" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 25, -0.24, 5 )
+
+[node name="Spikes9" parent="RoomsRoot/RoomsManager/RoomsList/THRONE ROOM/SpikesRight" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 35, -0.24, -15 )
+
+[node name="Spikes10" parent="RoomsRoot/RoomsManager/RoomsList/THRONE ROOM/SpikesRight" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 35, -0.24, 15 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 25 )
