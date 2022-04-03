@@ -284,7 +284,7 @@ collision_mask = 46
 axis_lock_motion_y = true
 move_lock_y = true
 script = ExtResource( 1 )
-max_speed = 32
+accel_radius = 70
 att_damage = 10
 
 [node name="Pivot" type="Spatial" parent="."]
@@ -332,7 +332,9 @@ transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0
 shape = SubResource( 9 )
 
 [node name="MoveTimer" type="Timer" parent="."]
-wait_time = 0.2
+wait_time = 0.75
+
+[node name="MoveCooldownTimer" type="Timer" parent="."]
 
 [node name="AttTimer" type="Timer" parent="."]
 
@@ -359,6 +361,7 @@ anims/RESET = SubResource( 14 )
 anims/die = SubResource( 15 )
 
 [connection signal="timeout" from="MoveTimer" to="." method="_on_MoveTimer_timeout"]
+[connection signal="timeout" from="MoveCooldownTimer" to="." method="_on_MoveCooldownTimer_timeout"]
 [connection signal="timeout" from="AttTimer" to="." method="_on_AttTimer_timeout"]
 [connection signal="timeout" from="DeathTimer" to="." method="_on_DeathTimer_timeout"]
 [connection signal="dead_signal" from="Stats" to="." method="_on_Stats_dead_signal"]
