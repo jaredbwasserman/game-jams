@@ -22,6 +22,15 @@ var velocity = Vector3.ZERO
 # Spell of player
 var spell
 
+# Health bar
+var health_bar
+
+
+func _ready():
+	health_bar = get_parent().get_node("UI/HealthBar")
+	health_bar.set_max_health($Stats.max_hp)
+	_update_health_bar()
+
 
 func _physics_process(delta):
 	# Look at mouse
@@ -138,8 +147,13 @@ func _on_RoomDetector_area_exited(area):
 			child.disable_and_reset()
 
 
+func _update_health_bar():
+	health_bar.set_health($Stats.cur_hp)
+
+
 func _on_Stats_took_damage_signal():
 	$DamageAnim.play("damage")
+	_update_health_bar()
 
 
 func _on_Stats_dead_signal():
