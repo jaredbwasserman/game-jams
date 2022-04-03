@@ -110,11 +110,13 @@ margin_bottom = 16.0
 text = "ROOM"
 
 [node name="HealthLabel" type="Label" parent="UI"]
+anchor_left = 0.5
 anchor_top = 1.0
+anchor_right = 0.5
 anchor_bottom = 1.0
-margin_left = 2.0
+margin_left = -398.0
 margin_top = -14.0
-margin_right = 52.0
+margin_right = -348.0
 text = "HEALTH"
 
 [node name="HealthBar" parent="UI" instance=ExtResource( 8 )]
