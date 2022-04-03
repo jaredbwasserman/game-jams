@@ -307,6 +307,7 @@ portal_mode = 2
 include_in_bound = false
 
 [node name="Stats" parent="." instance=ExtResource( 3 )]
+max_hp = 100
 
 [node name="WalkAnim" type="AnimationPlayer" parent="."]
 anims/RESET = SubResource( 13 )

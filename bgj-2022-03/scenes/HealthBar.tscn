@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://assets/textures/health_progress.png" type="Texture" id=1]
+[ext_resource path="res://assets/textures/health_under.png" type="Texture" id=2]
+
+[node name="HealthBar" type="Control"]
+
+[node name="Bar" type="TextureProgress" parent="."]
+margin_right = 740.0
+margin_bottom = 10.0
+rect_min_size = Vector2( 740, 10 )
+value = 50.0
+texture_under = ExtResource( 2 )
+texture_progress = ExtResource( 1 )

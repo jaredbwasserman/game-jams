@@ -38,3 +38,4 @@ Growth
 - https://www.godotforums.org/discussion/22779/x-at-gltf-import
 - https://godotengine.org/qa/72120/how-to-change-the-size-of-the-collision-shape-in-script
 - https://www.youtube.com/watch?v=eMGxxwOA-6g&t=1342s
+- https://www.youtube.com/watch?v=YEZXVK1-tlU
