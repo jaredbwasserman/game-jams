@@ -606,6 +606,19 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 14 )
 
+[node name="Instructions" type="Label" parent="UI"]
+margin_left = 40.0
+margin_top = 50.0
+margin_right = 320.0
+margin_bottom = 115.0
+text = "WASD TO MOVE
+SPACE TO JUMP
+LEFT-CLICK TO SHOOT MAGIC
+HOLD DOWN MOUSE TO POWER UP MAGIC
+
+FIND THE TREASURE!"
+align = 1
+
 [node name="RoomLabel" type="Label" parent="UI"]
 anchor_left = 0.5
 anchor_right = 0.5

@@ -1,5 +1,6 @@
 extends KinematicBody
 
+onready var instructions = $"/root/Main/UI/Instructions"
 onready var game_over = $"/root/Main/UI/GameOver"
 
 # Emitted when entering a new room
@@ -140,8 +141,16 @@ func _update_spell_pos():
 
 
 func _on_RoomDetector_area_entered(area):
+	var room_name = area.get_parent().name
+
 	# Room label
-	room_label.text = area.get_parent().name
+	room_label.text = room_name
+
+	# Instructions
+	if room_name == "FOYER":
+		instructions.show()
+	else:
+		instructions.hide()
 
 	# Fix camera
 	emit_signal("new_room_entered", area)
