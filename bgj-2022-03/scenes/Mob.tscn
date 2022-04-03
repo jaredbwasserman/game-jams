@@ -337,6 +337,10 @@ wait_time = 0.75
 [node name="MoveCooldownTimer" type="Timer" parent="."]
 
 [node name="AttTimer" type="Timer" parent="."]
+wait_time = 0.6
+
+[node name="AttCooldownTimer" type="Timer" parent="."]
+wait_time = 0.4
 
 [node name="DeathTimer" type="Timer" parent="."]
 wait_time = 0.5
@@ -363,6 +367,7 @@ anims/die = SubResource( 15 )
 [connection signal="timeout" from="MoveTimer" to="." method="_on_MoveTimer_timeout"]
 [connection signal="timeout" from="MoveCooldownTimer" to="." method="_on_MoveCooldownTimer_timeout"]
 [connection signal="timeout" from="AttTimer" to="." method="_on_AttTimer_timeout"]
+[connection signal="timeout" from="AttCooldownTimer" to="." method="_on_AttCooldownTimer_timeout"]
 [connection signal="timeout" from="DeathTimer" to="." method="_on_DeathTimer_timeout"]
 [connection signal="dead_signal" from="Stats" to="." method="_on_Stats_dead_signal"]
 [connection signal="took_damage_signal" from="Stats" to="." method="_on_Stats_took_damage_signal"]

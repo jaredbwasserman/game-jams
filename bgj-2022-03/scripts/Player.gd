@@ -1,5 +1,7 @@
 extends KinematicBody
 
+onready var game_over = $"/root/Main/UI/GameOver"
+
 # Emitted when entering a new room
 signal new_room_entered
 
@@ -167,4 +169,5 @@ func _on_Stats_took_damage_signal():
 
 
 func _on_Stats_dead_signal():
-	pass # Replace with function body.
+	$"/root/Main".get_tree().paused = true
+	game_over.show()

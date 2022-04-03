@@ -26,6 +26,9 @@ var is_moving = false
 # Able to attack (based on timer)
 var can_attack = true
 
+# Currently attacking
+var is_attacking = false
+
 # Dead
 var is_dead = false
 
@@ -55,14 +58,16 @@ func _dist_to_player():
 
 func _try_attack():
 	if can_attack and _dist_to_player() <= att_radius:
-		$Pivot/Face/LeftEye.visible = true
-		$Pivot/Face/RightEye.visible = true
-
 		$AttAnim.play("attack")
 
 		player.find_node("Stats").take_damage(att_damage)
 		can_attack = false
+		is_attacking = true
 		$AttTimer.start()
+
+	if is_attacking:
+		$Pivot/Face/LeftEye.visible = true
+		$Pivot/Face/RightEye.visible = true
 
 
 func _try_move():
@@ -106,8 +111,14 @@ func _on_MoveCooldownTimer_timeout():
 
 
 func _on_AttTimer_timeout():
-	can_attack = true
+	is_attacking = false
 	$AttTimer.stop()
+	$AttCooldownTimer.start()
+
+
+func _on_AttCooldownTimer_timeout():
+	can_attack = true
+	$AttCooldownTimer.stop()
 
 
 func _on_Stats_took_damage_signal():
