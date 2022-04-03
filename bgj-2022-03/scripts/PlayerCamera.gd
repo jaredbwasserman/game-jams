@@ -16,7 +16,7 @@ var ground_pos
 
 func _ready():
 	# First room
-	ground_mesh_path = "/root/Main/RoomsRoot/RoomsManager/RoomsList/ENTRANCE/Ground/MeshInstance"
+	ground_mesh_path = "/root/Main/RoomsRoot/RoomsManager/RoomsList/FOYER/Ground/MeshInstance"
  
 	_update_ground(get_node(ground_mesh_path))
 	set_process(true)

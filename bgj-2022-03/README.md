@@ -39,3 +39,4 @@ Growth
 - https://godotengine.org/qa/72120/how-to-change-the-size-of-the-collision-shape-in-script
 - https://www.youtube.com/watch?v=eMGxxwOA-6g&t=1342s
 - https://www.youtube.com/watch?v=YEZXVK1-tlU
+- https://godotengine.org/qa/44415/how-can-you-change-the-color-of-an-object-using-gdscript
