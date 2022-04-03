@@ -204,8 +204,8 @@ tracks/0/keys = {
 "values": [ true, true, false, true, false, true ]
 }
 
-[node name="Player" type="KinematicBody"]
-collision_mask = 14
+[node name="Player" type="KinematicBody" groups=["player"]]
+collision_mask = 78
 script = ExtResource( 2 )
 
 [node name="RoomDetector" type="Area" parent="."]

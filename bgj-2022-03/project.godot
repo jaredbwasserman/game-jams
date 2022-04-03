@@ -75,6 +75,7 @@ shoot={
 3d_physics/layer_4="rooms"
 3d_physics/layer_5="ground"
 3d_physics/layer_6="doors"
+3d_physics/layer_7="spikes"
 
 [physics]
 

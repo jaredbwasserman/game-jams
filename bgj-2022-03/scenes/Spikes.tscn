@@ -1,0 +1,145 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://scripts/Spikes.gd" type="Script" id=1]
+
+[sub_resource type="BoxShape" id=6]
+extents = Vector3( 5, 1, 5 )
+
+[sub_resource type="CubeMesh" id=1]
+size = Vector3( 10, 0.5, 10 )
+
+[sub_resource type="SpatialMaterial" id=2]
+albedo_color = Color( 0.0392157, 0.0352941, 0.0352941, 1 )
+
+[sub_resource type="PrismMesh" id=3]
+size = Vector3( 0.5, 1, 0.5 )
+
+[sub_resource type="SpatialMaterial" id=5]
+albedo_color = Color( 0.0392157, 0.0352941, 0.0352941, 1 )
+
+[node name="Spikes" type="Spatial"]
+script = ExtResource( 1 )
+
+[node name="Area" type="Area" parent="."]
+collision_layer = 64
+monitorable = false
+
+[node name="CollisionShape" type="CollisionShape" parent="Area"]
+shape = SubResource( 6 )
+
+[node name="Pivot" type="Spatial" parent="."]
+
+[node name="Floor" type="MeshInstance" parent="Pivot"]
+include_in_bound = false
+mesh = SubResource( 1 )
+material/0 = SubResource( 2 )
+
+[node name="Spike1" type="MeshInstance" parent="Pivot/Floor"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.199, 0.75, -3.73 )
+include_in_bound = false
+mesh = SubResource( 3 )
+material/0 = SubResource( 5 )
+
+[node name="Spike2" type="MeshInstance" parent="Pivot/Floor"]
+transform = Transform( 0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, -1.83031, 0.75, -2.94779 )
+include_in_bound = false
+mesh = SubResource( 3 )
+material/0 = SubResource( 5 )
+
+[node name="Spike3" type="MeshInstance" parent="Pivot/Floor"]
+transform = Transform( 0.913545, 0, 0.406737, 0, 1, 0, -0.406737, 0, 0.913545, 0.235719, 0.75, -4.07975 )
+include_in_bound = false
+mesh = SubResource( 3 )
+material/0 = SubResource( 5 )
+
+[node name="Spike4" type="MeshInstance" parent="Pivot/Floor"]
+transform = Transform( 0.0523359, 0, 0.99863, 0, 1, 0, -0.99863, 0, 0.0523359, 2.68408, 0.75, -3.75749 )
+include_in_bound = false
+mesh = SubResource( 3 )
+material/0 = SubResource( 5 )
+
+[node name="Spike5" type="MeshInstance" parent="Pivot/Floor"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.44881, 0.75, -1.4656 )
+include_in_bound = false
+mesh = SubResource( 3 )
+material/0 = SubResource( 5 )
+
+[node name="Spike6" type="MeshInstance" parent="Pivot/Floor"]
+transform = Transform( 0.949036, 0, 0.315169, 0, 1, 0, -0.315169, 0, 0.949036, -1.09577, 0.75, -1.26273 )
+include_in_bound = false
+mesh = SubResource( 3 )
+material/0 = SubResource( 5 )
+
+[node name="Spike7" type="MeshInstance" parent="Pivot/Floor"]
+transform = Transform( 0.825133, 0, -0.564938, 0, 1, 0, 0.564938, 0, 0.825133, 0.873189, 0.75, -1.89731 )
+include_in_bound = false
+mesh = SubResource( 3 )
+material/0 = SubResource( 5 )
+
+[node name="Spike8" type="MeshInstance" parent="Pivot/Floor"]
+transform = Transform( 0.792705, 0, -0.609606, 0, 1, 0, 0.609606, 0, 0.792705, 3.91195, 0.75, -0.830098 )
+include_in_bound = false
+mesh = SubResource( 3 )
+material/0 = SubResource( 5 )
+
+[node name="Spike9" type="MeshInstance" parent="Pivot/Floor"]
+transform = Transform( 0.944863, 0, -0.327465, 0, 1, 0, 0.327465, 0, 0.944863, -3.86771, 0.75, 0.409902 )
+include_in_bound = false
+mesh = SubResource( 3 )
+material/0 = SubResource( 5 )
+
+[node name="Spike10" type="MeshInstance" parent="Pivot/Floor"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.45301, 0.75, 0.756248 )
+include_in_bound = false
+mesh = SubResource( 3 )
+material/0 = SubResource( 5 )
+
+[node name="Spike11" type="MeshInstance" parent="Pivot/Floor"]
+transform = Transform( 0.917852, 0, 0.396924, 0, 1, 0, -0.396924, 0, 0.917852, 1.0318, 0.75, 1.5978 )
+include_in_bound = false
+mesh = SubResource( 3 )
+material/0 = SubResource( 5 )
+
+[node name="Spike12" type="MeshInstance" parent="Pivot/Floor"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.97413, 0.75, 0.877164 )
+include_in_bound = false
+mesh = SubResource( 3 )
+material/0 = SubResource( 5 )
+
+[node name="Spike13" type="MeshInstance" parent="Pivot/Floor"]
+transform = Transform( 0.000209407, 0, -1, 0, 1, 0, 1, 0, 0.000209407, -3.90005, 0.75, 4.25866 )
+include_in_bound = false
+mesh = SubResource( 3 )
+material/0 = SubResource( 5 )
+
+[node name="Spike14" type="MeshInstance" parent="Pivot/Floor"]
+transform = Transform( 0.993603, 0, 0.112926, 0, 1, 0, -0.112926, 0, 0.993603, -1.70821, 0.75, 3.07355 )
+include_in_bound = false
+mesh = SubResource( 3 )
+material/0 = SubResource( 5 )
+
+[node name="Spike15" type="MeshInstance" parent="Pivot/Floor"]
+transform = Transform( 0.904418, 0, -0.426648, 0, 1, 0, 0.426648, 0, 0.904418, 1.21223, 0.75, 3.94386 )
+include_in_bound = false
+mesh = SubResource( 3 )
+material/0 = SubResource( 5 )
+
+[node name="Spike16" type="MeshInstance" parent="Pivot/Floor"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.06381, 0.75, 3.04732 )
+include_in_bound = false
+mesh = SubResource( 3 )
+material/0 = SubResource( 5 )
+
+[node name="AttTimer" type="Timer" parent="."]
+
+[node name="TopLight" type="DirectionalLight" parent="."]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 20, 0 )
+visible = false
+
+[node name="BottomLight" type="DirectionalLight" parent="."]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, -20, 0 )
+visible = false
+
+[connection signal="body_entered" from="Area" to="." method="_on_Area_body_entered"]
+[connection signal="body_exited" from="Area" to="." method="_on_Area_body_exited"]
+[connection signal="timeout" from="AttTimer" to="." method="_on_AttTimer_timeout"]

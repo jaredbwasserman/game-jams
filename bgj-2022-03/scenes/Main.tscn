@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scripts/PlayerCamera.gd" type="Script" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://scenes/SquareRoom.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenes/Fireball.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scenes/Mob.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/Spikes.tscn" type="PackedScene" id=7]
 
 [node name="Main" type="Node"]
 
@@ -29,7 +30,10 @@ omni_range = 100.0
 omni_attenuation = 0.025
 omni_shadow_mode = 0
 
-[node name="Mob1" parent="RoomsRoot/RoomsManager/RoomsList/Room1" instance=ExtResource( 6 )]
+[node name="Spikes" parent="RoomsRoot/RoomsManager/RoomsList/Room1" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.2, 0 )
+
+[node name="Mob" parent="RoomsRoot/RoomsManager/RoomsList/Room1" instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, -25 )
 
 [node name="Room5" parent="RoomsRoot/RoomsManager/RoomsList" instance=ExtResource( 4 )]
