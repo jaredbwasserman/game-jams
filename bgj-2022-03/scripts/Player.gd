@@ -22,11 +22,18 @@ var velocity = Vector3.ZERO
 # Spell of player
 var spell
 
+# Room label
+var room_label
+
 # Health bar
 var health_bar
 
 
 func _ready():
+	# Room
+	room_label = get_parent().get_node("UI/RoomLabel")
+
+	# Health
 	health_bar = get_parent().get_node("UI/HealthBar")
 	health_bar.set_max_health($Stats.max_hp)
 	_update_health_bar()
@@ -131,6 +138,9 @@ func _update_spell_pos():
 
 
 func _on_RoomDetector_area_entered(area):
+	# Room label
+	room_label.text = area.get_parent().name
+
 	# Fix camera
 	emit_signal("new_room_entered", area)
 

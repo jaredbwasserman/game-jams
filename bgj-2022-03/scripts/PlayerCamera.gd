@@ -7,14 +7,17 @@ export var offset_z = 45
 # Padding
 export var padding = 10
 
-# Path to first ground mesh
-export var ground_mesh_path: String
+# Path to ground mesh
+var ground_mesh_path
 
 # Some variables
 var ground_pos
 
 
 func _ready():
+	# First room
+	ground_mesh_path = "/root/Main/RoomsRoot/RoomsManager/RoomsList/ENTRANCE/Ground/MeshInstance"
+ 
 	_update_ground(get_node(ground_mesh_path))
 	set_process(true)
 
